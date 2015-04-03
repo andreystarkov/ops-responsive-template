@@ -1,0 +1,11 @@
+*.zip
+*.psd
+*.tar.gz
+*.tgz
+_/
+dist/
+node_modules/
+bower_components/
+_docs/
+_img/
+src/sftp-config.json

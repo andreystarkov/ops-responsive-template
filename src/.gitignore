@@ -1,0 +1,7 @@
+*.zip
+*.psd
+*.tar.gz
+*.tgz
+sftp-config.json
+sass/
+libs/
