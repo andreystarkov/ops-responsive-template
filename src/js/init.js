@@ -109,17 +109,31 @@
 		  element: $('#main'),
 		  handler: function(direction) {
 		    if(direction == "down"){
-		    	$('#nav').addClass('faded');
+		    	$('#header').addClass('faded');
 		    } else {
-		    	$('#nav').removeClass('faded');
+		    	$('#header').removeClass('faded');
 		    }
 		  }
 		});
-
+	  $('a[href*=#]:not([href=#])').click(function() {
+	    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+	      var target = $(this.hash);
+	      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+	      if (target.length) {
+	        $('html,body').animate({
+	          scrollTop: target.offset().top
+	        }, 1000);
+	        return false;
+	      }
+	    }
+	  });
 		$('.carousel-caption').each(function(){
 			$(this).addClass('animated');
 		});
 
+		$('.box-news').each(function(){
+			$('.image', this).append('<i class="icon-magnifier-add"></i><div class="overlay"></div>');
+		});
 		$('.carousel').carousel({ interval: 15000, pause: 'hover' });
 
 		createSliderNavigation('#slider-header');

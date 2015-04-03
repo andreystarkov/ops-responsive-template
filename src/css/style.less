@@ -5,7 +5,7 @@
 @mainFont: 'Roboto';
 @condFont: 'Roboto Condensed';
 
-
+@defaultTextColor: #333;
 @darkBgBlue: #122333;
 @paleBlue: #2b5279;
 @highlightGreen: #00d0a6;
@@ -60,6 +60,7 @@ body {
 
     }
 }
+
 h1, h2, h3, h4, h5, h6 {
     color: #333;
     font-weight: bold;
@@ -75,6 +76,7 @@ h1, h2, h3, h4, h5, h6 {
         display:inline-block;
     }
 }
+
 
 .dark-overlay {
     position: absolute;
@@ -99,19 +101,31 @@ h1, h2, h3, h4, h5, h6 {
 
 .icn.lite-round {
     display:inline-block;
-    padding: 10px;
+    padding: 14px;
     border-radius:50%;
     background: fade(#666,10%);
     border: 3px solid fade(#666,12%);
-    color: fade(mix(@darkRed, #000, 70%), 85%);
-
+    color: fade(mix(@darkRed, #666, 20%), 85%);
     font-size:1em;
+}
+
+.box-section {
+    * { transition: 0.6s ease-in-out all; }
+    &:hover {
+        .icn {
+            background: @darkRed;
+            color:white;
+        }
+        .section-title {
+            color: #444;
+        }
+    }
 }
 
 .section-title {
     font-size:2.8em;
     font-weight:400;
-    color: #444;
+    color: fade(#444,80%);
     text-transform: uppercase;
     i {
     margin-right:10px;
@@ -147,7 +161,17 @@ a.button-action, input.button-action {
     }
 }
 
+.faded {
+    transition:0.3s ease-in-out all;
+    background: fade(@darkBg,60%);
+    .btn-up {
+        opacity: 1;
+    }
+}
+
+.btn-up { opacity:0; }
 #header {
+    transition:0.5s ease-in-out all;
     color: #fff;
     cursor: default;
     height: 3.25em;
@@ -172,12 +196,10 @@ a.button-action, input.button-action {
         }
     }
 
-    .faded {
-        background: fade(@darkBg,60%);
-    }
+
 
     nav {
-        background: fade(#222,15%);
+     //   background: fade(#222,15%);
         height: inherit;
         line-height: inherit;
         position: relative;
@@ -282,23 +304,57 @@ a.button-action, input.button-action {
 }
 
 
-
 .box-news {
     .news-item {
-        a {
+        display:block;
+        color:@defaultTextColor;
+        text-decoration: none;
+        .image {
+            position:relative;
+            margin-bottom: 1em;
+            overflow:hidden;
+            i {
+                opacity:0;
+                transform: scale(0.2) translate(0, 200px);
+                position: absolute;
+                top:30px;
+                left:110px;
+                color: fade(#fff,85%);
+                font-size: 100px;
+                z-index:2;
+            }
+            .overlay {
+                opacity:0;
+                position: absolute;
+                left: 0; top:0; right: 0; bottom: 0;
+                background:fade(#000, 30%);
+                z-index:1;
+            }
+        }
+
+        b {
             display:block;
             margin-bottom:10px;
-            color:#000;
+            color:#444;
             font-family: @condFont;
             font-size: 1.5em;
-            font-weight:300;
-            &:hover {
-                color: @darkRed;
-            }
+            font-weight:400;
         }
 
         p {
             font-weight:300;
+        }
+
+        &:hover {
+            .overlay {
+                opacity:1;
+            }
+            b { color: @darkRed; }
+            p { color: #000; }
+            .image i {
+                opacity: 1;
+                transform: scale(1) translate(0, 0);
+            }
         }
     }
 }
@@ -318,9 +374,9 @@ a.button-action, input.button-action {
             font-family: @mainFont;
             font-size:1.15em;
             color:#000;
-            font-weight:200;
+            font-weight:300;
             b {
-                font-weight:300;
+                font-weight:400;
                 font-size:1.22em;
             }
         }
