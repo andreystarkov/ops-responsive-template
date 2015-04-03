@@ -72,6 +72,7 @@
 			width: 3.5em;
 		}
 
+	.content h2,.section-title,.section-title i { font-size: 2em;}
 	#navPanel {
 		background: #444;
 		color: #fff;

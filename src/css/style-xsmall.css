@@ -10,18 +10,6 @@
 		font-size: 12pt;
 	}
 
-	#slider-header .carousel-inner, #slider-header .carousel-inner .item {
-		height: 100%;
-	}
-
-	#slider-header .carousel-inner .item img { height: 100%; }
-	#slider-header, #slider-header .carousel-inner {
-		overflow: hidden;
-	}
-
-	#slider-header .carousel-inner .item {
-		position: relative;
-	}
 
 	.header-top .logo .logo-image {
 		float:none;
@@ -70,6 +58,19 @@
 		padding:8px;
 		display:none;
 		font-size:35px;
+	}
+
+	#slider-header .carousel-inner, #slider-header .carousel-inner .item {
+		height: 100%;
+	}
+
+	#slider-header .carousel-inner .item img { height: 100%; }
+	#slider-header, #slider-header .carousel-inner {
+		overflow: hidden;
+	}
+
+	#slider-header .carousel-inner .item {
+		position: relative;
 	}
 
 	#slider-header .carousel-inner .item img {
