@@ -75,7 +75,32 @@
         );
     }
 
+    function addAnimation(obj, animation){
+    	$(obj).each(function(i){
+    		i++;
+    		$(this).addClass('wow '+animation);
+    		$(this).attr({"data-wow-duration": "1s", "data-wow-delay": "0."+i+"s"});
+    	});
+    }
+
 	$(function() {
+
+        new WOW().init();
+
+		addAnimation('.box-features section', 'bounceInUp');
+
+		$('body').flowtype({minFont: 12, maxFont: 16, maximum: 1200});
+
+		var waypoint = new Waypoint({
+		  element: $('#main'),
+		  handler: function(direction) {
+		    if(direction == "down"){
+		    	$('#nav').addClass('faded');
+		    } else {
+		    	$('#nav').removeClass('faded');
+		    }
+		  }
+		});
 
 		$('.carousel-caption').each(function(){
 			$(this).addClass('animated');

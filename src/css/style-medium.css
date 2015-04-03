@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+
 /* skel-baseline v2.0.3 | (c) n33 | getskel.com | MIT licensed */
 
 /* Basic */
@@ -8,6 +9,18 @@
 		font-size: 12pt;
 	}
 
+	.logo {
+		max-width: 500px;
+		text-align: left;
+	}
+	.logo .logo-image {
+		margin-right:15px;
+		float: left;
+	}
+
+	.logo h2 {
+		display: inline-block;
+	}
 /* Header */
 
 	#skel-layers-wrapper {

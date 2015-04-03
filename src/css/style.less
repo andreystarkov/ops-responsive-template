@@ -32,6 +32,18 @@ h1,h2,h3,h4 { color: #000; }
     }
 }
 
+.dark-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width:100%;
+    height:100%;
+    background:fade(#222,35%);
+    z-index:1;
+}
+
 #header {
     color: #fff;
     cursor: default;
@@ -56,8 +68,13 @@ h1,h2,h3,h4 { color: #000; }
             font-size: 1.25em;
         }
     }
-    nav {
+
+    .faded {
         background: fade(#222,60%);
+    }
+
+    nav {
+      //  background: fade(#222,60%);
         height: inherit;
         line-height: inherit;
         position: relative;
@@ -81,8 +98,9 @@ h1,h2,h3,h4 { color: #000; }
                     -o-transition: color 0.2s ease-in-out;
                     -ms-transition: color 0.2s ease-in-out;
                     transition: color 0.2s ease-in-out;
-                    color: #eee;
+                    color: #fff;
                     font-family: @condFont;
+                    font-weight:300;
                     font-size: 1.2em;
                     display: inline-block;
                     padding-left:0.8em;
@@ -202,20 +220,22 @@ h1,h2,h3,h4 { color: #000; }
     }
 
 }
+
 .carousel-caption {
   //  display:none;
-    bottom: 15%;
+    z-index:222;
+    bottom: 12%;
     text-shadow: 0 0 0 rgba(0,0,0,0) !important;
     .caption {
-        max-width:450px;
+        max-width:500px;
         display:block;
         margin: 0 auto;
         padding: 20px 25px;
         text-align: left;
-        background: fade(#000,60%);
+        background: fade(#000,30%);
         b {
             color: white;
-            font-size: 1.5em;
+            font-size: 1.6em;
             font-weight:300;
             display:block;
             margin-bottom:0.4em;
@@ -223,32 +243,40 @@ h1,h2,h3,h4 { color: #000; }
         }
 
         p {
+            color: mix(#fff, #bbb, 80%);
             margin-bottom:0;
-            font-size:1em;
+            font-size:1.1em;
             line-height:1.4;
             font-weight:200;
         }
     }
 
 }
+
 .header-top {
+    position: relative;
+
     .logo-wrapper {
         position: absolute;
-        top: 150px;
+        top: 15%;
         width:100%;
         left: 0;
         right: 0;
         text-align:center;
-        z-index:1;
+        z-index:2;
     }
     .logo {
         margin:0 auto;
         .logo-image {
+            width: 10%;
             display:inline-block;
             border-radius:50%;
             // border: 5px solid #666;
             box-shadow: 0px 1px 6px rgba(0,0,0,0.4);
             margin-bottom:20px;
+            img {
+                width:100%;
+            }
         }
         h2 {
             font-size:2.5em;
