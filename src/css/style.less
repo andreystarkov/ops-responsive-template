@@ -163,13 +163,17 @@ a.button-action, input.button-action {
 
 .faded {
     transition:0.3s ease-in-out all;
-    background: fade(@darkBg,60%);
+
+    nav {
+        background: fade(@darkBg,60%);
+    }
     .btn-up {
         opacity: 1;
     }
 }
 
-.btn-up { opacity:0; }
+.btn-up { opacity:0;  }
+
 #header {
     transition:0.5s ease-in-out all;
     color: #fff;
@@ -195,8 +199,6 @@ a.button-action, input.button-action {
             font-size: 1.25em;
         }
     }
-
-
 
     nav {
      //   background: fade(#222,15%);
