@@ -29,15 +29,6 @@
 		line-height: 1.65em;
 	}
 
-	a {
-		color: #49bf9d;
-		text-decoration: underline;
-	}
-
-		a:hover {
-			text-decoration: none;
-		}
-
 	strong, b {
 		color: #666;
 		font-weight: bold;
@@ -48,18 +39,10 @@
 	}
 
 
-
-	h1, h2, h3, h4, h5, h6 {
-		color: #666;
-		font-weight: bold;
-		line-height: 1em;
-		margin: 0 0 1em 0;
+	h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+		color: inherit;
+		text-decoration: none;
 	}
-
-		h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
-			color: inherit;
-			text-decoration: none;
-		}
 
 	h2 {
 		font-size: 1.75em;
